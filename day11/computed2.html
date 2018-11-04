@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="firstName" placeholder="第一个名">
+        <input type="text" v-model="secondName" placeholder="第二个名">
+        <input type="text" v-model="thirdName" placeholder="第三个名">
+        <!-- Tom·JSON·JERRY -->
+        <h1>这个人的全名是 {{fullName | upper | lower}}</h1>
+    </div>
+</body>
+
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            firstName: 'Evan',
+            secondName: 'You',
+            thirdName: 'China'
+        },
+        computed: {
+            fullName() {
+                return `${this.firstName}·${this.secondName}·${this.thirdName}`;
+            }
+        },
+        // 过滤器
+        filters: {
+            upper(val) {
+                // 字母都大写
+                return val.toUpperCase();
+            },
+            lower(val){
+                // 字母都大写
+                return val.toUpperCase();
+            }
+        }
+    })
+</script>

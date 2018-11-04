@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .current {
+            background: #ccc;
+            font-size: 77px;
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 
+            v-bind 一般用来绑定行内属性
+         -->
+        <!-- <img v-for="item in ary" v-bind:src="item" alt=""> -->
+        <!-- 简写 -->
+        <img v-for="item in ary" :src="item" alt="">
+
+        <!-- 元素加不加class 根据 flag 决定; flag是true就加,false就不加 -->
+        <div :class='flag_1 ? "current" : ""'>钱难有</div>
+        <div :class='{current:flag_2}'>钱难有</div>
+
+        <div style="color:aqua;">6074603</div>
+        <div :style="{color:col,fontSize:'20px'}">6074603</div>
+    </div>
+</body>
+
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            ary: [
+                'https://cms-bucket.nosdn.127.net/2018/10/30/4ed5f85f42714ef19b45133b040714e0.jpeg?imageView&thumbnail=600y250',
+                'https://cms-bucket.nosdn.127.net/2018/10/30/595d6de2720540a2a029ea942bbe35e6.jpeg?imageView&thumbnail=600y250',
+                'https://cms-bucket.nosdn.127.net/2018/10/30/c64b0a44681c4bd98d2a4ac10d7b9a25.jpeg?imageView&thumbnail=600y250',
+                'https://cms-bucket.nosdn.127.net/2018/10/30/7da5a50215584ed89c8e75ca115fa872.jpeg?imageView&thumbnail=600y250',
+                'F:/钱难有/桌面壁纸/真香.png'
+            ],
+            flag_1: true,
+            flag_2: false,
+            col: 'aqua'
+        }
+    })
+</script>

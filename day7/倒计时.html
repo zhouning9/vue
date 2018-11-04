@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="timeBox"></div>
+</body>
+
+</html>
+<script>
+    // 倒计时 思路
+    // 要知道目标时间 和 当前时间
+    // 把两者的时间差 转成时分秒
+    // 一秒转一次
+
+    // 目标时间
+    let target = new Date('2018/10/27 12:00:00');
+    // 下一步 获取当前时间,并求出两者差
+    // 这一步要一秒执行一次
+    let clear = setInterval(() => {
+        let now = new Date().getTime();
+        let time = target - now;
+        if (time <= 0) {
+            // 到点后清除 定时器
+            clearInterval(clear);
+            return;
+        }
+
+        // 1小时 = 3600*1000 = 3600000 毫秒
+        // 时
+        let h = Math.floor(time / 3600000);
+
+        // 分
+        time = time - h * 3600000;
+        let m = Math.floor(time / 60000);
+
+        // 秒
+        time = time - m * 60000;
+        let s = Math.floor(time / 1000);
+
+        // 将倒计时时间添加到 div中
+        let str = `距离下课还有：${h < 10 ? '0' + h : h}时${m < 10 ? '0' + m : m}分${s < 10 ? '0' + s : s}秒`; // ES6写法
+        timeBox.innerHTML = str;
+
+        // 三元运算
+        // 条件 ? 条件成立的执行 : 条件不成立的执行
+    }, 1000);
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 查出字符串中重复次数最多的那个字符
+    var str = 'qwweqqq';
+    var obj = {};
+    for(var i = 0; i < str.length; i++){
+        if(obj[str[i]]){
+            // 若对象中存在该项 则证明之前已经给该项赋过值了 直接进行 i++
+            obj[str[i]]++;
+        }else{
+            obj[str[i]] = 1;
+        }
+    }
+    console.log(obj);
+    
+    var max = 0; // 假设最大次数是0次
+    var maxStr = '';
+    for (var key in obj) {
+        if (obj[key] > max) {
+            max = obj[key];
+            maxStr = key;
+        }
+    }
+    console.log(maxStr, max);
+</script>

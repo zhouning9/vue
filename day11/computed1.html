@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 输入, 然后把你输入的反过来 -->
+        <input type="text" v-model="name">
+        <h1>{{name.split('').reverse().join('')}}</h1>
+        <h2>{{name2}}</h2>
+    </div>
+</body>
+
+</html>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            name: ''
+        },
+        computed: {
+            name2() {
+                // name2 就是依赖于 this.name
+                // 只要 this.name 变化,就会触发这个函数
+                // console.log(this.name);
+                let str = this.name.split('').reverse().join('');
+                return str;
+            }
+        }
+    })
+</script>

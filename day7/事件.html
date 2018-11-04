@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        a{
+            display: block;
+            color: red;
+            font-size: 20px;
+            text-align: center;
+            line-height: 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="oDiv" style="width:500px; height:1900px; background: #ccc;">
+        <div id="inner" style="width:300px; height:200px;background:blue;">
+            <div id="a">
+                <a href="https://www.baidu.com/">百度一下</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    oDiv.onclick = function (e) {
+        console.log(e);
+        // e.target ---> 代表点击de元素
+        // e.clientX ---> 鼠标点击的位置 距离可是窗口 x轴的位置
+        // e.pageX ---> 鼠标点击的位置距离body左上角 x轴的位置
+    }
+    inner.onclick = function (e){
+        // e.stopPropagation(); // 阻止冒泡
+        console.log('inner');
+    }
+    a.onclick = function(e){
+        e.preventDefault(); // 阻止默认行为
+        alert(1);
+    }
+    // oDiv.onmouseenter = function (e) {
+    //     console.log(e);
+    // }
+    // oDiv.onmouseleave = function (e) {
+    //     console.log(e);
+    // }
+    // document.documentElement.scrollTop = 0;
+    // window.onscroll = function (){
+    //     // 监听页面的滚动
+    //     console.log(e);
+    // }
+</script>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="sjz">
+        美丽的石家庄
+    </div>
+</body>
+<script>
+    Math.floor(3.9);//向下取整 3
+    Math.ceil(3.1); //向上取整 4
+    Math.round(3.1);//四舍五入 3
+    Math.abs(2); //取绝对值 2
+    Math.abs(-2); //取绝对值 2
+    Math.random(); //[0-1)0-1之间的随即小数 包含0不包含1
+    Math.floor(Math, random() * 10);
+    Math.round(Math.random() * (n - m) + m)//n-m之间得随机整数
+
+
+    Math.max(1, 2, 4, 3);//求一组数中最大值 4
+    Math.min(1, 2, 3, 4);//求一组数中最小值 1
+
+    let ary = [23, 35, 233, 245, 72];
+    Math.max(...ary)
+
+
+
+    // let fn = function () {
+    // }
+
+    // let fn2 = (a,b) => {
+
+    //箭头函数没有 arguments； 他是把arguments 当作普通变量
+    //箭头函数也没有 this； 他是从上级作用域中查找相应的this
+
+    //console.log(arguments);
+    // console.log(arguments);
+    // return a + b;
+    // } 
+
+    //普通函数中得this指向问题
+    //1.若是事件绑定中得函数中得this 是指向绑定得元素
+    //2.查看函数之前有没有点 有点的话，点前面是谁，this就是谁
+    // 没点就是window
+
+    // let oDiv = document.getElementById('sjz');
+    // sjz.onclick = function () {
+    // console.log(this);
+    // };
+
+
+    // let obj ={
+    // fn:function(){
+    // console.log(this)
+    // }
+    // };
+    // let fn2 = obj.fn;
+    // console.log(fn2 === obj.fn);
+    // obj.fn();
+    // fn2();
+
+    // let obj = {
+    // fn: ()=> {
+    // console.log(this)
+    // }
+    // };
+    // let fn2 = obj.fn;
+    // console.log(fn2 === obj.fn)
+    // obj.fn()
+    // fn2.call(obj, 1, 2, 4, 564, 7, 78);
+
+    let obj = {
+        fn: function () {
+            //arguments 类数组
+            console.log(this, arguments)
+        }
+    };
+    let fn2 = obj.fn;
+    console.log(fn2 === obj.fn)
+    obj.fn()
+    fn2.call(obj, 1, 2, 4, 564, 7, 78);
+    fn2.apply(obj, [1, 2, 3, 4, 5]);
+    fn2.bind(obj, 1, 2, 3);
+
+    //fn.call (obj,1,2,3)
+    //把fn中的this换成obj
+    //并把后边的这些个参数传给fn
+
+    // fn.apply(obj,[1,2,3,4])
+    // 把 fn 中的 this 换成 obj
+    // 第二个参数是一个数组或类数组
+
+    // 自执行函数
+    // (function (a, b) { return a + b })(11, 55); // 返回66
+    // ((a,b) => {return a+b})(1,2); // 返回3
+
+    let arr = [32, 66, 44, 33, 77];
+    arr.sort((a, b) => { return a - b }); // 排序 小到大
+</script>
+
+</html>

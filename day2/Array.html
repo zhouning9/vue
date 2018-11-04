@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function fn(){
+        
+        return;
+        // return有两个作用,一个打断函数的执行,另一个返回结果给外界.不写return默认返回undefined.
+        console.log('6074603'); // 不输出,因为被 return打断了
+    }
+    fn();
+
+    var ary = [1, 2, 3, 4];
+    ary[3] = 10; // 返回[1,2,3,10]
+
+    // 给数组的末尾添加项
+    // push
+    var n = ary.push(999, 1, 2);
+    console.log(n, ary); // n 就是返回值时改编后的数组长度
+
+    // 删除数组的最后一项
+    // pop
+    var item = ary.pop();
+    console.log(ary);
+
+    // 给数组的首位添加项
+    // unshift
+    var u = ary.unshift(100,222);
+    console.log(ary); 
+
+    // 删除数组的首位项
+    // shift
+    var d = ary.shift();
+    console.log(ary);
+
+    ary = [65, 34, 6884, 456, 8908];
+    var ary3 = ary.sort(function (a, b) {
+        return a - b; 
+        // 返回值a-b是升序
+        // 返回值b-a是降序
+    });
+    console.log(ary3 === ary);
+
+    // reverse 数组的反转,返回结果跟原数组是一个地址
+    // ary.reverse();
+
+    // forEach 数组循环,没有返回值
+    ary.forEach(function (item, index){
+        // item 是循环的数组的每一项
+        // index 是循环的每一项的索引
+    });
+
+    // map 数组循环,有返回值
+    ary.map(function (item,index){});
+
+    // filter
+    // 过滤
+    var ary2 = ary.filter(function (item, index){
+        return item > 200;
+        // return 的值是true时,会把当前的item放入新的数组.
+    });
+    console.log(ary2);
+
+    // 让数组中的每一项以指定字符拼接,返回结果是个字符串
+    ary.join('+');
+
+    // 把字符串以指定字符拆分成数组
+    // split
+    var str1 = '1+2+3+4+56';
+    str1.split('+'); 
+    var str2 = '222345';
+    str2.split('');
+
+    // 数组求和,用forEach()
+    var ary = [23,13,22,45]; 
+    var t = 0;
+    // for(var i = 0; i < ary.length; i++){
+    //     t += ary[i];
+    // }
+    // console.log(t);
+
+    ary.forEach(function (item){
+        t += item;
+    });
+    console.log(t);
+
+    // eval() 将字符串转换成表达式
+    var str = '1+2+3';
+    var sum = eval(str);
+    console.log(sum);
+
+    // indexOf() 返回某个指定的字符串值在字符串中首次出现的位置
+    var z = [43,12,45,63];
+    z.indexOf(12); // 返回1
+    var str = 'Hello World!';
+    str.indexOf('Wor'); // 返回7
+    
+</script>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /*
+    Math中常用的方法
+    数学函数,但是它是对象数据类型的'typeof Math' ---> 'object'
+
+    Math对象中给我们提供了很多常用操作数字方法
+    'console.dir(Math)'查看所有方法和属性
+    */
+
+/* ------------------------------------------------------------- */
+
+    // abs
+    // Math.abs:取绝对值
+
+    // Math.abs(9) ---> 9
+    // Math.abs(-9.99) ---> 9.99
+    
+/* ------------------------------------------------------------- */
+
+    // ceil / floor
+    // Math.ceil:向上取整
+    // Math.floor:向下取整
+
+    // Math.ceil(9) ---> 9
+    // Math.ceil(9.1) ---> 10
+    // Math.ceil(9.9) ---> 10
+    // Math.ceil(-9.1) ---> -9
+    // Math.ceil(-9.9) ---> -9
+
+    // Math.floor(9) --->9
+    // Math.floor(9.1) ---> 9
+    // Math.floor(9.9) ---> 9
+    // Math.floor(-9.1) ---> -10
+    // Math.floor(-9.9) ---> -10
+
+/* ------------------------------------------------------------- */
+
+    // round
+    // Math.round:四舍五入
+
+    // Math.round(9.4) ---> 9
+    // Math.round(9.5) ---> 10
+
+    // Math.round(-9.4) ---> -9
+    // Math.round(-9.5) ---> -9
+    // Math.round(-9.51) ---> -10
+
+/* ------------------------------------------------------------- */
+
+    // random
+    // Math.random:获取[0,1)之间的随机数
+
+    // 获取[0,10]之间的随机整数
+    var r1 = Math.round(Math.random()*10);
+    console.log(r1);
+
+    // 获取[1,10]之间的随机整数
+    var r2 = Math.ceil(Math.random()*10);
+    console.log(r2);
+
+    // 获取[3,15]之间的随机整数
+    var r3 = Math.round(Math.random()*12+3);
+    console.log(r3);
+
+    // 获取[n,m]之间的随机整数
+    // Math.round(Math.random()*(m-n)+n);
+
+/* ------------------------------------------------------------- */
+
+    // max / min
+    // Math.max:获取一组值中的最大值
+    // Math.min:获取一组值中的最小值
+
+    // Math.max(22, 12, 21, 111, 654, 34, 77, 999) ---> 999
+    // Math.min(22, 12, 21, 111, 654, 34, 77, 999) ---> 12
+
+
+/* ------------------------------------------------------------- */
+
+    // PI ---> 属性
+    // Math.PI:获取圆周率(π)
+
+    // Math.PI ---> 3.141592653589793
+
+/* ------------------------------------------------------------- */
+
+    // pow / sqrt
+    // Math.pow(x,y):返回 x 的 y 次幂的值
+    // Math.sqrt(x):返回一个数的平方根,x必须是大于等于0的
+
+    // Math.pow(10,2) ---> 100
+    // Math.pow(5,2) ---> 25
+
+    // Math.sqrt(-1) ---> NaN
+    // Math.sqrt(0) ---> 0
+    // Math.sqrt(25) ---> 5
+
+</script>

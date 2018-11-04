@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作用域</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<!-- 
+    变量提升机制
+    在所有的代码执行之前,浏览器会把
+    带有 var 关键字的提前声明一次,这里只是声明 不定义.
+    带有 function 关键字的,即声明又定义.
+ -->
+<script>
+    // sum();
+    // function sum(){
+    //     console.log('this is a sum');
+    // };
+
+    // fn();
+    // var fn = function (){
+    //     console.log('this is a fn');
+    // };
+    // function fn(){
+    //     console.log(2222);
+    // }
+    // fn();
+
+    /*
+    var 和 let(const) 的简单的区别
+    1、 let 声明的变量不会挂到 window下
+    2、 let 声明的变量没有变量提升
+            console.log(q); ---> undefined
+            var q = 12;
+            console.log(a); ---> 报错
+            let a = 12;
+    3、 let能识别块级作用域
+    4、 let不能重复声明
+    */
+
+    /*
+        Es6之前的作用域：
+        
+        全局作用域 ---> 全局变量
+
+        私有作用域(函数执行 形成私有作用域) ---> 私有变量(声明过得,形参)
+        
+        块级作用域(用{}包起来的部分) 只对let 和 const 声明的变量起作用
+    */
+
+    // 函数执行时才会形成私有作用域
+
+    // fn2();
+    // var a = 10;
+    // fn2();
+    // function fn2(){
+    //     console.log(a);
+    //     var a = 12;
+    // }
+
+    // fn2();
+    // var a = 10;
+    // fn2();
+    // function fn2() {
+    //     console.log(a);
+    //     a = 12;
+    // }
+
+    // fn2();
+    // console.log(a);
+    // var a = 10;
+    // fn2();
+    // function fn2() {
+    //     console.log(a);
+    //     a = 12;
+    // }
+
+    // 上级作用域
+    // 一个函数的执行,它的上级作用域跟这个函数在哪里执行没关系,
+    //               只跟这个函数在哪里定义的有关系,
+    //               在哪个作用域定义的,它的上级作用域就是谁
+
+    // 作用域链
+    // 它是一个变量的查找机制,自己作用域没有时,就往上级找,直到找到这个变量
+    //                      当找到全局作用域时,扔没有找到这个变量,这时就会报错
+
+    // var n = 10;
+    // function outer() {
+    //     var n = 15;
+    //     function inner(n) {
+    //         console.log(n)
+    //         function center() {
+    //             n++;
+    //             console.log(n);
+    //         } 
+    //         center();
+    //     }
+    //     inner(n);
+    // }
+    // outer();
+
+
+
+    let b = 10;
+    function fn2() {
+        console.log(b)
+        let b = 12;
+    }
+    fn2();
+</script>

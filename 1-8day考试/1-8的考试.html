@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 第一题
+    let ary = [23, 4, 11, 3, -3, -2, 34];
+    // 1.筛选出 数组中大于0的数
+    var num1 = ary.filter((item) => item > 0);
+    console.log(num1);
+    // 2.筛选出 数组中的奇数
+    // var b = ary.filter((item) => item % 2 == 1); // 简单写法
+    var num2 = ary.filter((item => {
+        return item % 2 == 1;
+    }))
+    console.log(num2);
+
+
+    // 第二题
+    // 箭头函数中的this是指向上级作用域的this
+    let obj1 = { a: 10 };
+    obj1.fn1 = (x) => this.a + x;
+    obj1.fn2 = function (x, y) {
+        return this.a + x;
+    }
+    console.log(obj1.fn1(10));
+    console.log(obj1.fn2(20));
+
+
+    // 第三题
+    let obj2 = { name: 'zn' };
+    let obj3 = { ...obj2, age: 18 };
+    let obj4 = obj2;
+    obj4.age = 18;
+    console.log(obj4 === obj3);
+    console.log(obj4 === obj2);
+
+
+    // 第四题
+    var foo = 1;
+    function bar() {
+        if(!foo){
+            var foo = 10;
+        }
+        console.log(foo);
+    }
+    bar();
+</script>

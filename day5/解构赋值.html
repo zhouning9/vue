@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>解构赋值</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    /*
+        数组的解构赋值
+        赋值结果  按照对应的位置去赋值
+        前边数组放变量,后边数组放值
+    */
+
+    let ary = [1, 2, 3, 4, 5, 6];
+    // let a1 = ary[0];
+    // let a2 = ary[1];
+    let [a1, a2, a3, , , a4] = ary;
+
+    // 不添加变量的情况下, 互换x y的值
+    let x = 12;
+    let y = 13;
+    // [x, y] = [y, x]; ---> ES6新增的
+    x = x + y;
+    y = x - y;
+    x = x - y;
+    console.log('x=' + x, 'y=' + y);
+
+
+    /*
+        对象的解构赋值
+        按照名称 进行解构赋值的
+    */
+    let {name, age, sex} = {name:'zn', age:18};
+    console.log(name, age, sex);
+    /*
+    let name = obj.name;
+    let age = obj.age;
+    let sex = obj.sex;
+    */
+
+    /*
+        扩展运算符
+    */
+    // 数组解构赋值
+    let arr1 = [1,2,3];
+    let arr2 = [...arr1,...arr1,4,5,6];
+    let arr3 = [arr1,arr1,4,5,6];
+    let arr4 = ary1.concat([1,2,3,4,5]);
+
+    // 对象解构赋值
+    let obj1 = {name:'zz', age:18};
+    let obj2 = {...obj1, sex:1, name2:'nn'};
+
+    let obj3 = {...obj1};
+    let obj4 = obj1;
+    // obj3 === obj4; ---> false,因为地址不同
+
+    
+</script>

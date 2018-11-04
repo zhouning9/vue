@@ -1,0 +1,10 @@
+行内元素：
+
+块元素：
+
+css选择器的权重 id 100； class 10； 标签选择器 1
+
+css盒子模型：内容 内填充 边框 外边距
+
+标准的盒子模型 padding和border 都是往外撑, box-sizing: content-box;
+IE的盒子模型 padding和border 都是往里撑, box-sizing: border-box;

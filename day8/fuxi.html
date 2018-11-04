@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    class A {
+
+    }
+    class B extends A {
+        constructor() {
+            super();
+        }
+        sum2() {
+
+        }
+    }
+    let b = new B;
+    b.sum();
+
+
+    // 移动端事件
+    touchstart;
+    touchmove;
+    touchend;
+
+    /*
+        ajax
+    */
+    let xhr = new XMLHttpRequest();
+    xhr.open('get', './data.json', true); // true代表异步,可以省略 默认true
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.responseText);
+        }
+    };
+    xhr.send();
+</script>
